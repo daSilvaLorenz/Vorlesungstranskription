@@ -14,7 +14,7 @@ original_language_folder = "C:/Users/Lukas/Documents/Uni/Würzburg/KI-Tutor/Whis
 # Ordner für die Englische Übersetzung
 eng_transcript_base = "C:/Users/Lukas/Documents/Uni/Würzburg/KI-Tutor/Whisper/DeepL_API/Englisches Transkript"
 # Dateipfad für den API-Schlüssel
-api_key_file = os.getenv("Deepl_API-Key")
+api_key = os.getenv("Deepl_API-Key")
 
  
 
@@ -74,23 +74,18 @@ for f in audio_files:
     with open(os.path.join(OL_Transcriptions, f"{file_name}.txt"), 'r', encoding='utf-8') as file:
         text_to_translate = file.read()
 
-    # Überprüfen, ob die API-Schlüssel-Datei existiert
-    if os.path.exists(api_key_file):
-        # API-Schlüssel aus der Datei lesen
-        with open(api_key_file, 'r') as file:
-            auth_key = file.read().strip()
+if api_key:
+    # Initialisiere den Übersetzer mit dem API-Schlüssel aus der Umgebungsvariable
+    translator = deepl.Translator(api_key)
+        
+    # Führe die Übersetzung durch
+    translated_text = translator.translate_text(text_to_translate, source_lang="DE", target_lang="EN-GB",split_sentences="nonewlines")
 
-        # Initialisiere den Übersetzer mit dem gelesenen API-Schlüssel
-        translator = deepl.Translator(auth_key)
-
-        # Führe die Übersetzung durch
-        translated_text = translator.translate_text(text_to_translate, source_lang="DE", target_lang="EN-GB",split_sentences="nonewlines")
-
-        # Übersetzten Text in Ausgabedatei schreiben
-        output_file_name = file_name + "_Deepl.txt"
-        output_file = os.path.join(output_folder, output_file_name)
-        with open(output_file, 'w', encoding='utf-8') as file:
-            file.write(translated_text.text)
-        print(f"Translated text saved to: {output_file}")
-    else:
-        print("API key file not found.")
+    # Übersetzten Text in Ausgabedatei schreiben
+    output_file_name = file_name + "_Deepl.txt"
+    output_file = os.path.join(output_folder, output_file_name)
+    with open(output_file, 'w', encoding='utf-8') as file:
+        file.write(translated_text.text)
+    print(f"Translated text saved to: {output_file}")
+else:
+    print("API key file not found.")
