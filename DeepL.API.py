@@ -77,7 +77,7 @@ for f in audio_files:
 if api_key:
     # Initialisiere den Übersetzer mit dem API-Schlüssel aus der Umgebungsvariable
     translator = deepl.Translator(api_key)
-        
+          
     # Führe die Übersetzung durch
     translated_text = translator.translate_text(text_to_translate, source_lang="DE", target_lang="EN-GB",split_sentences="nonewlines")
 
