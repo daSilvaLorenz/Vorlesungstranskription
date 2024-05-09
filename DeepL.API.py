@@ -16,7 +16,7 @@ eng_transcript_base = "C:/Users/Lukas/Documents/Uni/Würzburg/KI-Tutor/Whisper/D
 # Dateipfad für den API-Schlüssel
 api_key_file = os.getenv("Deepl_API-Key")
 
-
+ 
 
 def unique_path(base_path, name, is_directory=False):
     """Generiert einen einzigartigen Pfad, indem eine Nummer hinzugefügt wird, falls der Pfad bereits existiert."""
