@@ -65,8 +65,7 @@ for f in audio_files:
     shutil.move(f, unique_destination_file)
     print(f"Moved file to: {unique_destination_file}")
 
-    # Übersetzung des Dokuments von Deutsch nach Englisch
-    #Zielordner festlegen
+    #Zielordner festlegen für das Englische Transkript
     output_folder = unique_path(eng_transcript_base, file_name, is_directory=True)
     os.makedirs(output_folder, exist_ok=True)
 
