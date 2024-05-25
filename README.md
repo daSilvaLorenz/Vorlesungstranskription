@@ -7,8 +7,8 @@ Dieses Projekt automatisiert den Prozess der Transkription von Audiodateien und 
 ## Inhaltsverzeichnis
 
 1. [Installation](#installation)
-2. [Verwendung](#verwendung)
-3. [Ordnerstruktur](#ordnerstruktur)
+2. [Ordnerstruktur](#ordnerstruktur)
+3. [Verwendung](#verwendung)
 4. [Funktionsweise](#funktionsweise)
 5. [Konfiguration](#konfiguration)
 6. [Beitragen](#beitragen)
@@ -16,29 +16,30 @@ Dieses Projekt automatisiert den Prozess der Transkription von Audiodateien und 
 
 ## Installation
 
-1. **Python Installieren:** Stellen Sie sicher, dass Python 3.7 oder höher installiert ist.
-2. **Abhängigkeiten Installieren:** Installieren Sie die erforderlichen Python-Pakete mit folgendem Befehl:
+1. **Python Installieren:** Stellen Sie sicher, dass [Python](https://www.python.org/downloads/) 3.7 oder höher installiert ist.
+2. **Abhängigkeiten Installieren:** Installieren Sie die erforderlichen Python-Pakete mit folgendem Befehl in der Kommandozeile:
     ```bash
     pip install deepl
-    pip install ffmpeg
     ```
 3. **Whisper Installieren:** Folgen Sie den Anweisungen auf der [Whisper GitHub-Seite](https://github.com/openai/whisper) zur Installation des Whisper-Tools.
 4. **DeepL API-Key:** Erstellen Sie einen API-Key für die DeepL-API und speichern Sie diesen in einer Umgebungsvariable `Deepl_API-Key`. Weitere Informationen [Deepl API Dokumentation](https://developers.deepl.com/docs/v/de)
+5. **ffmpeg installieren:** Folgen Sie den Anwesisungen auf der [ffmpeg Seite](https://ffmpeg.org/download.html) zur Installation dieses Audioverarbeitungsprogramms.
 
-## Verwendung
+## Ordnerstruktur
+Hier wird festgelegt, wo sich die zu transkribierenden Audiodateien befinden und wo die Transkripte gespeichert werden sollen.
+Diese Ordner müssen in den Zeilen 8 - 15 im Code festgelegt werden. 
 
-1. **Audiodateien Hinzufügen:** Legen Sie die zu transkribierenden Audiodateien im Ordner `zu transkribierende Audio` ab.
+- `input_folder`: Eingabeordner für die Audiodateien.
+- `transcribed_audio_folder`: Ordner für fertig transkribierte Audiodateien.
+- `Deutsches Transkript`: Ordner für Transkripte in der Originalsprache.
+- `Englisches Transkript`: Ordner für die englische Übersetzung der Transkripte.
+
+## Verwendung 
+1. **Audiodateien Hinzufügen:** Legen Sie die zu transkribierenden Audiodateien im Ordner `input_folder` ab.
 2. **Skript Ausführen:** Führen Sie das Skript aus:
     ```bash
     python transcribe_and_translate.py
     ```
-
-## Ordnerstruktur
-
-- `zu tranksribierende Audio`: Eingabeordner für die Audiodateien.
-- `fertige Audio`: Ordner für fertig transkribierte Audiodateien.
-- `Deutsches Transkript`: Ordner für Transkripte in der Originalsprache.
-- `Englisches Transkript`: Ordner für die englische Übersetzung der Transkripte.
 
 ## Funktionsweise
 
