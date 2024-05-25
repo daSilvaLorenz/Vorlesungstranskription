@@ -6,14 +6,14 @@ import shutil
 import deepl
 
 # Pfad zum Ordner mit den Audiodateien
-input_folder = "C:/Users/Lukas/Documents/Uni/Würzburg/KI-Tutor/Whisper/DeepL_API/zu tranksribierende Audio"
+input_folder = "path/to/your/audio/files",
 # Zielordner für fertig transkribierte Audiodateien
-transcribed_audio_folder = "C:/Users/Lukas/Documents/Uni/Würzburg/KI-Tutor/Whisper/DeepL_API/fertige Audio"
+transcribed_audio_folder = "path/to/your/transcribed/audio",
 # Ordner für Transkripte in Originalsprache
-original_language_folder = "C:/Users/Lukas/Documents/Uni/Würzburg/KI-Tutor/Whisper/DeepL_API/Deutsches Transkript"
+original_language_folder = "path/to/your/original/language/transcripts",
 # Ordner für die Englische Übersetzung
-eng_transcript_base = "C:/Users/Lukas/Documents/Uni/Würzburg/KI-Tutor/Whisper/DeepL_API/Englisches Transkript"
-# Dateipfad für den API-Schlüssel
+eng_transcript_base = "path/to/your/english/transcripts"
+# Environment für den API-Schlüssel
 api_key = os.getenv("Deepl_API-Key")
 
  
