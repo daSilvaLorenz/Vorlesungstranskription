@@ -6,13 +6,24 @@ Dieses Projekt automatisiert den Prozess der Transkription von Audiodateien und 
 
 ## Inhaltsverzeichnis
 
-1. [Installation](#installation)
-2. [Ordnerstruktur](#ordnerstruktur)
-3. [Verwendung](#verwendung)
-4. [Funktionsweise](#funktionsweise)
-5. [Konfiguration](#konfiguration)
-6. [Beitragen](#beitragen)
-7. [Lizenz](#lizenz)
+1. [Erklärung](#Erklärung)
+2. [Installation](#installation)
+3. [Ordnerstruktur](#ordnerstruktur)
+4. [Verwendung](#verwendung)
+5. [Funktionsweise](#funktionsweise)
+6. [Konfiguration](#konfiguration)
+7. [Beitragen](#beitragen)
+8. [Lizenz](#lizenz)
+
+## Erklärung
+Es gibt verschiedene Möglichkeiten mit hilfe von Whisper Vorlesungen zu transkribieren. Welche am sinvollsten ist hängt von verschiedenen Faktoren ab. Hier sollen einige Möglichkeiten vorgestellt werden, damit Sie eine Methode finden, die auf ihre Situation passt.
+
+### Google Colab
+Über Google Colaboratory kann man Skripte ausführen lassen und externe GPU Rechenleistung benutzen. Das bietet sich für Whisper an, weil es für die Transkription sehr viel Rechenleistung benötigt. Abhängig von dem PC kann es dann mehrere Stunden dauern, bis eine Vorlesung transkribiert wurde. Wenn man über Google Colab eiin GPU benutzt dauert das ca. 30 Minuten. Der Nachteil ist, dass man nur für eine begrenzte Zeit auf diese GPU Leistung zugreifen kann und die Laufzeitverbindung abgebrochen wird, wenn man über eine längere Zeit nicht aktiv damit arbeitet. Deswegen eignet sich dieses System vor allem dafür, wenn man die Funktionalität für sich erst einmal testen will oder man nur wenige Veranstaltungen transkribieren will.
+
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/9b641d71-da88-4fe2-b676-e7a5f22592ce)
+
+
 
 ## Installation
 
