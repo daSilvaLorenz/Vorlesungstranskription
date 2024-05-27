@@ -21,8 +21,24 @@ Es gibt verschiedene Möglichkeiten mit hilfe von Whisper Vorlesungen zu transkr
 ### Google Colab
 Über Google Colaboratory kann man Skripte ausführen lassen und externe GPU Rechenleistung benutzen. Das bietet sich für Whisper an, weil es für die Transkription sehr viel Rechenleistung benötigt. Abhängig von dem PC kann es dann mehrere Stunden dauern, bis eine Vorlesung transkribiert wurde. Wenn man über Google Colab eiin GPU benutzt dauert das ca. 30 Minuten. Der Nachteil ist, dass man nur für eine begrenzte Zeit auf diese GPU Leistung zugreifen kann und die Laufzeitverbindung abgebrochen wird, wenn man über eine längere Zeit nicht aktiv damit arbeitet. Deswegen eignet sich dieses System vor allem dafür, wenn man die Funktionalität für sich erst einmal testen will oder man nur wenige Veranstaltungen transkribieren will.
 
+Wenn Sie dieses System benutzen wollen öffnen Sie bitte zuerst dieses [Colab-Notebook](https://colab.research.google.com/drive/17QYYbLTORudIGh7v2WcN56NydUuEpYMA?usp=sharing) und melden sich mit oihrem Google Account an. 
+
+Laufzeitverbindung
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/9b641d71-da88-4fe2-b676-e7a5f22592ce)
 
+Ordner
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/2208b97c-6a4a-405e-91aa-b143056bd82c)
+
+Google Drive
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/6c918628-135f-4bb3-b572-660f2031d10d)
+
+Den Drive Ordnern öffnen, und bis zu den Ordner navigieren, in dem die entsprechenden Dateien sind.
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/5e3ccd4f-9db2-4153-9a95-55638fe17c15)
+
+rechtsklick auf den entsprechenden Ordner/die entsprechende Datei und auf Pfad kopieren drücken
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/addc1b8e-7d71-491a-932b-c99b743ac17b)
+
+Den jeweiligen Pfad ind die entprechende Zeile Einfügen
 
 
 ## Installation
