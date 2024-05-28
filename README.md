@@ -19,27 +19,38 @@ Dieses Projekt automatisiert den Prozess der Transkription von Audiodateien und 
 Es gibt verschiedene Möglichkeiten mit hilfe von Whisper Vorlesungen zu transkribieren. Welche am sinvollsten ist hängt von verschiedenen Faktoren ab. Hier sollen einige Möglichkeiten vorgestellt werden, damit Sie eine Methode finden, die auf ihre Situation passt.
 
 ### Google Colab
-Über Google Colaboratory kann man Skripte ausführen lassen und externe GPU Rechenleistung benutzen. Das bietet sich für Whisper an, weil es für die Transkription sehr viel Rechenleistung benötigt. Abhängig von dem PC kann es dann mehrere Stunden dauern, bis eine Vorlesung transkribiert wurde. Wenn man über Google Colab eiin GPU benutzt dauert das ca. 30 Minuten. Der Nachteil ist, dass man nur für eine begrenzte Zeit auf diese GPU Leistung zugreifen kann und die Laufzeitverbindung abgebrochen wird, wenn man über eine längere Zeit nicht aktiv damit arbeitet. Deswegen eignet sich dieses System vor allem dafür, wenn man die Funktionalität für sich erst einmal testen will oder man nur wenige Veranstaltungen transkribieren will.
+Über Google Colaboratory kann man Skripte ausführen lassen und externe GPU Rechenleistung benutzen. Das bietet sich für Whisper an, weil es für die Transkription sehr viel Rechenleistung benötigt. Abhängig von dem PC kann es dann mehrere Stunden dauern, bis eine Vorlesung transkribiert wurde. Wenn man über Google Colab eine GPU benutzt dauert das mit dem large_v2 Modell ca. 40 Minuten. Der Nachteil ist, dass man nur für eine begrenzte Zeit auf diese GPU Leistung zugreifen kann und die Laufzeitverbindung unterbrochen wird, wenn man über eine längere Zeit nicht aktiv damit arbeitet. Deswegen eignet sich dieses System vor allem dafür, wenn man die Funktionalität erst einmal testen, oder nur wenige Veranstaltungen transkribieren will.
 
-Wenn Sie dieses System benutzen wollen öffnen Sie bitte zuerst dieses [Colab-Notebook](https://colab.research.google.com/drive/17QYYbLTORudIGh7v2WcN56NydUuEpYMA?usp=sharing) und melden sich mit oihrem Google Account an. 
+Wenn Sie dieses System benutzen wollen öffnen Sie bitte zuerst dieses [Colab-Notebook](https://colab.research.google.com/drive/17QYYbLTORudIGh7v2WcN56NydUuEpYMA?usp=sharing) und melden sich mit ihrem Google Account an.
 
 Laufzeitverbindung
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/9b641d71-da88-4fe2-b676-e7a5f22592ce)
 
-Ordner
+Dann drücken Sie auf das Ordner Symbol.
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/2208b97c-6a4a-405e-91aa-b143056bd82c)
 
-Google Drive
+Verbinden sich mit ihrem Google Drive Account.
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/6c918628-135f-4bb3-b572-660f2031d10d)
 
-Den Drive Ordnern öffnen, und bis zu den Ordner navigieren, in dem die entsprechenden Dateien sind.
-![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/5e3ccd4f-9db2-4153-9a95-55638fe17c15)
+Öffnen den Google Drive Ordner und navigieren zu den Ordner, wo sie ihre Dateien aufbewahren wollen.
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/d762f677-6ce3-458b-9e37-3d3a61778f37)
 
-rechtsklick auf den entsprechenden Ordner/die entsprechende Datei und auf Pfad kopieren drücken
-![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/addc1b8e-7d71-491a-932b-c99b743ac17b)
+Rechtsklick auf den entsprechenden Ordner/die entsprechende Datei und auf Pfad kopieren drücken.
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/f6ccbb64-360a-4c31-a798-94e2549cf395)
 
-Den jeweiligen Pfad ind die entprechende Zeile Einfügen
+Den jeweiligen Pfad in die entprechende Zeile einfügen.
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/bddc1d05-e61b-4faf-905b-47b9a5784df5)
 
+Auf das Play Symbol drücken, um das Programm zu starten.
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/6d7ecdfc-01b9-402f-b60f-f754f78733ec)
+
+### Lokale Transkription und Übersetzung mit Whisper 
+Whsiper ist auch dazu in der Lage eine Englische Übersetzung der Transkription zu machen. Diese Variante ist hilfreich, wenn sie die Übersetzung gleich im passenden Untertitelformat erhalten wollen, oder wenn es Ihnen wichtig ist das gesamte Programm lokal auf dem Rechner laufen zu lassen. Nachteile sind, dass dieser Prozess vergleichsweise langsam ist, nur ins Englische übersetzt werden kann und die Übersetzung meistens nicht mit DeepL mithalten kann. Sollten Sie sich für diese Option entscheiden können Sie sich gleich aauf [Whisper GitHub-Seite](https://github.com/openai/whisper) genauer darüber informieren. Sie können auch, wenn Sie den Schritten unter [Installation](#installation) gefolgt sind dem folgenden Befehl eine Deutsche und Englische Transkription über Whisper starten.
+    ```bash
+    python transcribe_and_translate_whisper.py
+    ```
+### Lokale Transkription und Übersetzung mit DeepL
+Diese Option ist sehr ähnlich zu der Option 
 
 ## Installation
 
