@@ -6,7 +6,7 @@ Dieses Projekt automatisiert den Prozess der Transkription von Audiodateien und 
 
 ## Inhaltsverzeichnis
 
-1. [Erklärung](#Erklärung)
+1. [Erklärung](#erklärung)
 2. [Installation](#installation)
 3. [Ordnerstruktur](#ordnerstruktur)
 4. [Verwendung](#verwendung)
@@ -23,10 +23,16 @@ Es gibt verschiedene Möglichkeiten mit hilfe von Whisper Vorlesungen zu transkr
 
 Wenn Sie dieses System benutzen wollen öffnen Sie bitte zuerst dieses [Colab-Notebook](https://colab.research.google.com/drive/17QYYbLTORudIGh7v2WcN56NydUuEpYMA?usp=sharing) und melden sich mit ihrem Google Account an.
 
-Laufzeitverbindung
-![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/9b641d71-da88-4fe2-b676-e7a5f22592ce)
+Drücke Sie oben rechts auf den Pfeil neben "Verbinden".
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/9e4586ac-1e1e-42ad-92fa-e1a8c4b2db29)
 
-Dann drücken Sie auf das Ordner Symbol.
+Dann auf Laufzeittyyp ändern.
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/39137ef1-0c19-462a-a123-c46be681dec8)
+
+Und dann auf T4 GPU und Speichern.
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/a31caaf4-2382-444d-b601-08953e482977)
+
+Als nächstes drücken Sie auf das Ordner Symbol.
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/2208b97c-6a4a-405e-91aa-b143056bd82c)
 
 Verbinden sich mit ihrem Google Drive Account.
@@ -41,7 +47,7 @@ Rechtsklick auf den entsprechenden Ordner/die entsprechende Datei und auf Pfad k
 Den jeweiligen Pfad in die entprechende Zeile einfügen.
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/bddc1d05-e61b-4faf-905b-47b9a5784df5)
 
-Auf das Play Symbol drücken, um das Programm zu starten.
+Wenn Sie alle nötigen Pfade festgelegt haben drücken Sie auf das Play Symbol, um das Programm zu starten.
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/6d7ecdfc-01b9-402f-b60f-f754f78733ec)
 
 ### Lokale Transkription und Übersetzung mit Whisper 
@@ -50,27 +56,27 @@ Whsiper ist auch dazu in der Lage eine Englische Übersetzung der Transkription 
     python transcribe_and_translate_whisper.py
     ```
 ### Lokale Transkription und Übersetzung mit DeepL
-Diese Option ist sehr ähnlich zu der Option 
-
+Bei dieser Option wird mit Hilfe von Whisper zunächst lokal ein Transkript in Originalsprache verfasst und dann mit der DeepL API übersetzt. Vorteile sind, dass die DeepL API eine komplette Vorlesung in wenigen Minuten übersetzen kann, die Übersetzung in 32 Sprachen möglich ist und dass die Übersetzung meistens besser ist als die von Whisper. Nachteil ist, dass wenn man im Monat mehr als 500.000 Zeichen übersetzen will (ca. 5 Vorlesungen), für die API zahlen muss. Wenn Sie mit der [Installation](#installation) ferrtig sind können Sie dieses Programm mit folgendem Befehl starten.
+    ```bash
+    python local_whisper_deepL_api.py
+    ``` 
+### Transkription und Übersetzung nur mit API's
+Hier benutzen wir sowohl für die Transkription als auch für die Übersetzung API's. Vorteile sind, dass die Transkription und Übersetzung dadurch viel schneller geht und lokal keine hohe Rechenkapazität benötigt wird. Nachteile sind, die Kosten für die API und dass man maximal 100 MB große Dateien auf einmal transkribieren lassen kann. Das sollte aber für die meisten Veranstaltungen, die 1,5 h dauern kein Problem sein, wenn man ein reines Audioformat benutzt. Diese Option bietet sich am besten für Personen an, die mehrere Vorlesungen transkribieren wollen. Starten können Sie dieses Programm nach der [Installation](#installation) mit.
+    ```bash
+    python only_api.py
+    ```
 ## Installation
 
 1. **Python Installieren:** Stellen Sie sicher, dass [Python](https://www.python.org/downloads/) 3.7 oder höher installiert ist.
-2. **Abhängigkeiten Installieren:** Installieren Sie die erforderlichen Python-Pakete mit folgendem Befehl in der Kommandozeile:
+2. **ffmpeg installieren:** Folgen Sie den Anwesisungen auf der [ffmpeg Seite](https://ffmpeg.org/download.html) zur Installation dieses Audioverarbeitungsprogramms.
+3. Wenn Sie Whsiper lokal benutzen wollen folgen Sie den Anweisungen auf der [Whisper GitHub-Seite](https://github.com/openai/whisper).
+   Wenn Sie die Whisper API benutzen wollen erstellen Sie sich bitte auf https://whisperapi.com/ einen API- Schlüssel und speichern diesen in einer Umgebungsvariablen namens `Whisper_API-Key`.
+4. Wenn Sie mit Hilfe von DeepL übersetzen wollen, erstellen Sie einen API-Key für die DeepL-API und speichern Sie diesen in einer Umgebungsvariable `Deepl_API-Key`. Bitte installieren Sie auch noch die nötigen Python-Pakete mit folgendem Befehl in der Kommandozeile
     ```bash
     pip install deepl
     ```
-3. **Whisper Installieren:** Folgen Sie den Anweisungen auf der [Whisper GitHub-Seite](https://github.com/openai/whisper) zur Installation des Whisper-Tools.
-4. **DeepL API-Key:** Erstellen Sie einen API-Key für die DeepL-API und speichern Sie diesen in einer Umgebungsvariable `Deepl_API-Key`. Weitere Informationen [Deepl API Dokumentation](https://developers.deepl.com/docs/v/de)
-5. **ffmpeg installieren:** Folgen Sie den Anwesisungen auf der [ffmpeg Seite](https://ffmpeg.org/download.html) zur Installation dieses Audioverarbeitungsprogramms.
-
-## Ordnerstruktur
-Hier wird festgelegt, wo sich die zu transkribierenden Audiodateien befinden und wo die Transkripte gespeichert werden sollen.
-Diese Ordner müssen in den Zeilen 8 - 15 im Code festgelegt werden. 
-
-- `input_folder`: Eingabeordner für die Audiodateien.
-- `transcribed_audio_folder`: Ordner für fertig transkribierte Audiodateien.
-- `Deutsches Transkript`: Ordner für Transkripte in der Originalsprache.
-- `Englisches Transkript`: Ordner für die englische Übersetzung der Transkripte.
+    Weitere Informationen finden sie in der [Deepl API Dokumentation](https://developers.deepl.com/docs/v/de).
+5. Ordnen Sie die entsprechenden Ordner in der config.py Datei zu, damit das Programm  weiß wo die Audiodatei finden und die Transkriptionen zu speichern sind. 
 
 ## Verwendung 
 1. **Audiodateien Hinzufügen:** Legen Sie die zu transkribierenden Audiodateien im Ordner `input_folder` ab.
