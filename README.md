@@ -8,8 +8,6 @@ Dieses Projekt automatisiert den Prozess der Transkription von Audiodateien und 
 
 1. [Erklärung](#erklärung)
 2. [Installation](#installation)
-3. [Ordnerstruktur](#ordnerstruktur)
-4. [Verwendung](#verwendung)
 5. [Funktionsweise](#funktionsweise)
 6. [Konfiguration](#konfiguration)
 7. [Beitragen](#beitragen)
@@ -48,42 +46,42 @@ Den jeweiligen Pfad in die entprechende Zeile einfügen.
 ![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/bddc1d05-e61b-4faf-905b-47b9a5784df5)
 
 Wenn Sie alle nötigen Pfade festgelegt haben drücken Sie auf das Play Symbol, um das Programm zu starten.
-![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/6d7ecdfc-01b9-402f-b60f-f754f78733ec)
+![image](https://github.com/daSilvaLorenz/Transkription/assets/160653026/aac155e3-e734-4fbc-b52c-b114607a6a39)
 
-### Lokale Transkription und Übersetzung mit Whisper 
-Whsiper ist auch dazu in der Lage eine Englische Übersetzung der Transkription zu machen. Diese Variante ist hilfreich, wenn sie die Übersetzung gleich im passenden Untertitelformat erhalten wollen, oder wenn es Ihnen wichtig ist das gesamte Programm lokal auf dem Rechner laufen zu lassen. Nachteile sind, dass dieser Prozess vergleichsweise langsam ist, nur ins Englische übersetzt werden kann und die Übersetzung meistens nicht mit DeepL mithalten kann. Sollten Sie sich für diese Option entscheiden können Sie sich gleich aauf [Whisper GitHub-Seite](https://github.com/openai/whisper) genauer darüber informieren. Sie können auch, wenn Sie den Schritten unter [Installation](#installation) gefolgt sind dem folgenden Befehl eine Deutsche und Englische Transkription über Whisper starten.
-    ```bash
-    python transcribe_and_translate_whisper.py
-    ```
+
+
+### Lokale Transkription und Übersetzung mit Whisper
+
+Whisper ist auch dazu in der Lage, eine englische Übersetzung der Transkription zu erstellen. Diese Variante ist hilfreich, wenn Sie die Übersetzung gleich im passenden Untertitelformat erhalten möchten oder wenn es Ihnen wichtig ist, das gesamte Programm lokal auf Ihrem Rechner laufen zu lassen. Nachteile sind, dass dieser Prozess vergleichsweise langsam ist, nur ins Englische übersetzt werden kann und die Übersetzung meistens nicht mit DeepL mithalten kann. Sollten Sie sich für diese Option entscheiden, können Sie sich auf der [Whisper GitHub-Seite](https://github.com/openai/whisper) genauer darüber informieren. Sie können auch, wenn Sie den Schritten unter [Installation](#installation) gefolgt sind, mit dem folgenden Befehl eine deutsche und englische Transkription über Whisper starten:
+```bash
+python transcribe_and_translate_whisper.py
+````
 ### Lokale Transkription und Übersetzung mit DeepL
-Bei dieser Option wird mit Hilfe von Whisper zunächst lokal ein Transkript in Originalsprache verfasst und dann mit der DeepL API übersetzt. Vorteile sind, dass die DeepL API eine komplette Vorlesung in wenigen Minuten übersetzen kann, die Übersetzung in 32 Sprachen möglich ist und dass die Übersetzung meistens besser ist als die von Whisper. Nachteil ist, dass wenn man im Monat mehr als 500.000 Zeichen übersetzen will (ca. 5 Vorlesungen), für die API zahlen muss. Wenn Sie mit der [Installation](#installation) ferrtig sind können Sie dieses Programm mit folgendem Befehl starten.
-    ```bash
-    python local_whisper_deepL_api.py
-    ``` 
-### Transkription und Übersetzung nur mit API's
-Hier benutzen wir sowohl für die Transkription als auch für die Übersetzung API's. Vorteile sind, dass die Transkription und Übersetzung dadurch viel schneller geht und lokal keine hohe Rechenkapazität benötigt wird. Nachteile sind, die Kosten für die API und dass man maximal 100 MB große Dateien auf einmal transkribieren lassen kann. Das sollte aber für die meisten Veranstaltungen, die 1,5 h dauern kein Problem sein, wenn man ein reines Audioformat benutzt. Diese Option bietet sich am besten für Personen an, die mehrere Vorlesungen transkribieren wollen. Starten können Sie dieses Programm nach der [Installation](#installation) mit.
-    ```bash
-    python only_api.py
-    ```
-## Installation
 
-1. **Python Installieren:** Stellen Sie sicher, dass [Python](https://www.python.org/downloads/) 3.7 oder höher installiert ist.
-2. **ffmpeg installieren:** Folgen Sie den Anwesisungen auf der [ffmpeg Seite](https://ffmpeg.org/download.html) zur Installation dieses Audioverarbeitungsprogramms.
-3. Wenn Sie Whsiper lokal benutzen wollen folgen Sie den Anweisungen auf der [Whisper GitHub-Seite](https://github.com/openai/whisper).
-   Wenn Sie die Whisper API benutzen wollen erstellen Sie sich bitte auf https://whisperapi.com/ einen API- Schlüssel und speichern diesen in einer Umgebungsvariablen namens `Whisper_API-Key`.
-4. Wenn Sie mit Hilfe von DeepL übersetzen wollen, erstellen Sie einen API-Key für die DeepL-API und speichern Sie diesen in einer Umgebungsvariable `Deepl_API-Key`. Bitte installieren Sie auch noch die nötigen Python-Pakete mit folgendem Befehl in der Kommandozeile
-    ```bash
-    pip install deepl
-    ```
-    Weitere Informationen finden sie in der [Deepl API Dokumentation](https://developers.deepl.com/docs/v/de).
-5. Ordnen Sie die entsprechenden Ordner in der config.py Datei zu, damit das Programm  weiß wo die Audiodatei finden und die Transkriptionen zu speichern sind. 
+Bei dieser Option wird mit Hilfe von Whisper zunächst lokal ein Transkript in der Originalsprache erstellt und dann mit der DeepL API übersetzt. Vorteile sind, dass die DeepL API eine komplette Vorlesung in wenigen Minuten übersetzen kann, die Übersetzung in 32 Sprachen möglich ist und dass die Übersetzung meistens besser ist als die von Whisper. Nachteil ist, dass man für die API zahlen muss, wenn man im Monat mehr als 500.000 Zeichen übersetzen will (ca. 5 Vorlesungen). Wenn Sie mit der Installation fertig sind, können Sie dieses Programm mit folgendem Befehl starten:
 
-## Verwendung 
-1. **Audiodateien Hinzufügen:** Legen Sie die zu transkribierenden Audiodateien im Ordner `input_folder` ab.
-2. **Skript Ausführen:** Führen Sie das Skript aus:
-    ```bash
-    python transcribe_and_translate.py
-    ```
+```bash
+python local_whisper_deepL_api.py
+```
+### Transkription und Übersetzung nur mit APIs
+
+Hier verwenden wir sowohl für die Transkription als auch für die Übersetzung APIs. Vorteile sind, dass die Transkription und Übersetzung dadurch viel schneller geht und lokal keine hohe Rechenkapazität benötigt wird. Nachteile sind die Kosten für die API und dass man maximal 100 MB große Dateien auf einmal transkribieren lassen kann. Das sollte aber für die meisten Veranstaltungen, die 1,5 Stunden dauern, kein Problem sein, wenn man ein reines Audioformat benutzt. Diese Option bietet sich am besten für Personen an, die mehrere Vorlesungen transkribieren wollen. Starten können Sie dieses Programm nach der Installation mit:
+
+```bash
+python only_api.py
+```
+
+### Installation
+1. Python installieren: Stellen Sie sicher, dass Python 3.7 oder höher installiert ist.
+2. ffmpeg installieren: Folgen Sie den Anweisungen auf der [ffmpeg-Seite](https://github.com/openai/whisper) zur Installation dieses Audioverarbeitungsprogramms.
+3. Wenn Sie Whisper lokal benutzen wollen, folgen Sie den Anweisungen auf der [Whisper GitHub-Seite](https://github.com/openai/whisper).
+Wenn Sie die Whisper API benutzen wollen, erstellen Sie sich bitte auf https://whisperapi.com/ einen API-Schlüssel und speichern diesen in einer Umgebungsvariablen namens Whisper_API-Key.
+4. Wenn Sie mit Hilfe von DeepL übersetzen wollen, erstellen Sie einen API-Key für die DeepL-API und speichern Sie diesen in einer Umgebungsvariablen Deepl_API-Key. Bitte installieren Sie auch die nötigen Python-Pakete mit folgendem Befehl in der Kommandozeile:
+```bash
+pip install deepl
+```
+Weitere Informationen finden Sie in der DeepL [API Dokumentation](https://developers.deepl.com/docs/v/de).
+5. Ordnen Sie die entsprechenden Ordner in der config.py Datei zu, damit das Programm weiß, wo die Audiodateien zu finden sind und wo die Transkriptionen gespeichert werden sollen.
 
 ## Funktionsweise
 
@@ -96,6 +94,10 @@ Hier benutzen wir sowohl für die Transkription als auch für die Übersetzung A
 
 - **API-Schlüssel:** Der API-Schlüssel für DeepL muss als Umgebungsvariable `Deepl_API-Key` gesetzt sein.
 - **Ordnerpfade:** Die Pfade zu den Eingabe- und Ausgabeordnern können im Skript angepasst werden.
+
+## Beitragen
+
+Fühlen Sie sich frei, Pull Requests zu senden, Probleme zu melden oder Funktionen vorzuschlagen.
 
 ## Lizenz
 
