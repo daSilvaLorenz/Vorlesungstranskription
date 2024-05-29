@@ -2,7 +2,6 @@ import subprocess
 import glob
 import os
 import shutil
-import subprocess
 
 # Konfigurationsdatei importieren
 from config import input_folder, transcribed_audio_folder, original_language_folder, eng_transcript_base, api_key
